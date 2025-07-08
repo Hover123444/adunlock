@@ -11,7 +11,7 @@ GUILD_ID = 1391533981329260718  # ⛔️ Remplace par l'ID de ton serveur Discor
 
 #Rôle à donner et lien vers ton site
 ROLE_NAME = "VIP"
-SITE_URL = "http://localhost:5000/unlock"  # 🔁 Ton lien vers le site
+SITE_URL = "https://adunlock.onrender.com/unlock"  # 🔁 Ton lien vers le site
 
 #Intents
 intents = discord.Intents.default()
