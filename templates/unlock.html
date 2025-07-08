@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Débloque ton rôle VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #ff4444;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        a.button {
+            background: linear-gradient(45deg, #ff0000, #550000);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        a.button:hover {
+            background: linear-gradient(45deg, #ff4444, #770000);
+        }
+        .key-box {
+            background-color: #1e1e1e;
+            border: 1px solid #444;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-top: 2rem;
+            display: none;
+        }
+        .key-box span {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00ff99;
+        }
+    </style>
+</head>
+<body>
+<h1>🎉 Débloque ton rôle VIP Discord</h1>
+    <p>1. Clique sur le bouton ci-dessous</p>
+    <p>2. Complète la vérification Linkvertise</p>
+    <p>3. Ta clé d'accès sera affichée automatiquement</p>
+
+    <a class="button" href="https://direct-link.net/1369276/A1iGZrKml482" target="_blank">
+        🔐 Accéder à la clé maintenant
+    </a>
+
+    <div class="key-box" id="keyBox">
+        <p>Voici ta clé :</p>
+        <span id="clé"></span>
+    </div>
+
+    <script>
+        // Si la page a été atteinte après redirection Linkvertise (vers /generate_key)
+        if (window.location.pathname.includes("generate_key")) {
+            fetch('/generate_key')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("clé").innerText = data.key;
+                    document.getElementById("keyBox").style.display = "block";
+                })
+                .catch(err => {
+                    alert("Une erreur est survenue pendant la génération de la clé.");
+                });
+        }
+    </script>
+
+</body>
+</html>
